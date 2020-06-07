@@ -6,9 +6,12 @@ namespace ToDoApp.Models
 {
     public enum MenuItemType
     {
-        TodoList,
-        Sprint,
-        Epic
+        Login, 
+        Items,
+        Welcome,
+        About,
+        Todo,
+        Sprint
     }
     public class HomeMenuItem
     {

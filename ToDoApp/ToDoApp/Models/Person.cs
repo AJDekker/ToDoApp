@@ -11,7 +11,7 @@ namespace ToDoApp.Models
         public string Password { get; set; }
 
         public Guid TaskId { get; set; }
-        public TodoItem TodoItem { get; set; }
+        public Todo TodoItem { get; set; }
         public Guid AddressId { get; set; }
         public Address Address { get; set; }
     }
