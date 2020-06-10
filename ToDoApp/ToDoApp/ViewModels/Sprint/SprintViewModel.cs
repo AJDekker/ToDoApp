@@ -8,16 +8,9 @@ namespace ToDoApp.ViewModels.Sprint
 {
     public class SprintViewModel : INotifyPropertyChanged
     {
-        private Guid id;
+        private Guid Id = new Guid("058ba2ce-121b-44fc-a806-e5c7764d5bf4");
 
-        public Guid Id
-        {
-            get { return id; }
-            set
-            {
-                id = new Guid();
-            }
-        }
+      
 
         private string name;
         public string Name

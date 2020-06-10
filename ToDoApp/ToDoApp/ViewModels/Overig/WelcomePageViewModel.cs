@@ -12,15 +12,18 @@ namespace ToDoApp.ViewModels
     {
         public WelcomePageViewModel()
         {
-            if (Application.Current.Properties["email"].ToString() != "")
+            if (Application.Current.Properties["id"].ToString() != "")
             {
-                Email = Application.Current.Properties["email"].ToString();
+                id = new Guid(Application.Current.Properties["id"].ToString());
             }
             else
             {
-                Email = "arjan@dekker.nl";
+                id = new Guid("6c80a87c-8122-4619-983f-e30b5e6107c4");
             }
         }
+
+        public Guid id; 
+
         private string email;
 
         public string Email
@@ -68,7 +71,7 @@ namespace ToDoApp.ViewModels
             {
                 if (!string.IsNullOrEmpty(Password))
                 {
-                    var isupdate = await UserFirebaseHelper.UpdateUser(Email, Password);
+                    var isupdate = await UserFirebaseHelper.UpdateUser(id, Email, Password);
                     if (isupdate)
                         await App.Current.MainPage.DisplayAlert("Update Success", "", "Ok");
                     else
@@ -88,7 +91,7 @@ namespace ToDoApp.ViewModels
         {
             try
             {
-                var isdelete = await UserFirebaseHelper.DeleteUser(Email);
+                var isdelete = await UserFirebaseHelper.DeleteUser(id);
                 if (isdelete)
                     await App.Current.MainPage.Navigation.PopAsync();
                 else

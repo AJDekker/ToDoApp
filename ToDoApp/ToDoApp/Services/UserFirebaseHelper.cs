@@ -24,6 +24,7 @@ namespace ToDoApp.ViewModels
                 .OnceAsync<Person>()).Select(item =>
                 new Person
                 {
+                    Id = item.Object.Id,
                     Email = item.Object.Email,
                     Password = item.Object.Password
                 }).ToList();
@@ -59,11 +60,9 @@ namespace ToDoApp.ViewModels
         {
             try
             {
-
-
                 await firebase
                 .Child("Users")
-                .PostAsync(new Person() { Email = email, Password = password });
+                .PostAsync(new Person() { Id = Guid.NewGuid(), Email = email, Password = password });
                 return true;
             }
             catch (Exception e)
@@ -74,15 +73,13 @@ namespace ToDoApp.ViewModels
         }
 
         //Update 
-        public static async Task<bool> UpdateUser(string email, string password)
+        public static async Task<bool> UpdateUser(Guid Id, string email, string password)
         {
             try
-            {
-
-
+            { 
                 var toUpdateUser = (await firebase
                 .Child("Users")
-                .OnceAsync<Person>()).Where(a => a.Object.Email == email).FirstOrDefault();
+                .OnceAsync<Person>()).Where(a => a.Object.Id == Id).FirstOrDefault();
                 await firebase
                 .Child("Users")
                 .Child(toUpdateUser.Key)
@@ -97,15 +94,13 @@ namespace ToDoApp.ViewModels
         }
 
         //Delete User
-        public static async Task<bool> DeleteUser(string email)
+        public static async Task<bool> DeleteUser(Guid Id)
         {
             try
-            {
-
-
+            { 
                 var toDeletePerson = (await firebase
                 .Child("Users")
-                .OnceAsync<Person>()).Where(a => a.Object.Email == email).FirstOrDefault();
+                .OnceAsync<Person>()).Where(a => a.Object.Id == Id).FirstOrDefault();
                 await firebase.Child("Users").Child(toDeletePerson.Key).DeleteAsync();
                 return true;
             }
@@ -114,7 +109,6 @@ namespace ToDoApp.ViewModels
                 Debug.WriteLine($"Error:{e}");
                 return false;
             }
-        }
-
+        } 
     }
 }

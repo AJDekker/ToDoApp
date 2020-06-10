@@ -7,6 +7,8 @@
              x:Class="ToDoApp.Views.AddTodo">
    <ContentPage.Content>
         <StackLayout>
+            <Entry x:Name="Identry" Placeholder="Id" Text="{Binding SprintId}" 
+                 />
             <Entry x:Name="Nameentry" Placeholder="Name" Text="{Binding Name}" 
                  />
             <Entry x:Name="Descriptionentry" Placeholder="Description" Text="{Binding Description}" 

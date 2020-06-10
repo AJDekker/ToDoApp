@@ -16,7 +16,7 @@ namespace ToDoApp.Models
         //public Address Address { get; set; }
         //public Guid EpicId { get; set; }
         //public Epic Epic { get; set; }
-        //public Guid SprintId { get; set; }
-        //public Sprint Sprint { get; set; }
+        public Guid SprintId { get; set; }
+        public Sprint Sprint { get; set; }
     }
 }
