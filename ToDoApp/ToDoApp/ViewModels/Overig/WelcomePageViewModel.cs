@@ -60,7 +60,7 @@ namespace ToDoApp.ViewModels
             {
                 return new Command(() =>
                 {
-                    App.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
+                    App.Current.MainPage.Navigation.PushModalAsync(new ToDoApp.Views.LoginPage());
                 });
             }
         }

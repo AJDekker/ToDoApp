@@ -106,7 +106,7 @@ namespace TodoApp.ViewModels
                     await App.Current.MainPage.DisplayAlert("Save todo Success", "", "Ok");
                     //Navigate to Wellcom page after successfuly SignUp
                     //pass user email to welcom page
-                    await App.Current.MainPage.Navigation.PushModalAsync(new TodoListPage());
+                    await App.Current.MainPage.Navigation.PushModalAsync(new ToDoApp.Views.Todo.TodoListPage());
                 }
                 else
                     await App.Current.MainPage.DisplayAlert("Error", "Save todo Fail", "OK");

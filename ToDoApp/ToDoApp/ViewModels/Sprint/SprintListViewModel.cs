@@ -19,7 +19,7 @@ namespace ToDoApp.ViewModels.Sprint
             Items = new ObservableCollection<ToDoApp.Models.Sprint>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<AddSprint, ToDoApp.Models.Sprint>(this, "AddSprint", async (obj, item) =>
+            MessagingCenter.Subscribe<ToDoApp.Views.Sprint.AddSprint, ToDoApp.Models.Sprint>(this, "AddSprint", async (obj, item) =>
             {
                 var newSprint = item as ToDoApp.Models.Sprint;
                 Items.Add(newSprint); 

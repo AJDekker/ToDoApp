@@ -21,7 +21,7 @@ namespace ToDoApp.ViewModels
             Items = new ObservableCollection<Todo>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<AddTodo, Todo>(this, "AddTodo", async (obj, item) =>
+            MessagingCenter.Subscribe<ToDoApp.Views.AddTodo, Todo>(this, "AddTodo", async (obj, item) =>
             {
                 var newTodo = item as Todo;
                 Items.Add(newTodo); 

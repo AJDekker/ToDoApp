@@ -12,7 +12,7 @@ namespace ToDoApp.Views
     [DesignTimeVisible(false)]
     public partial class MenuPage : ContentPage
     {
-        MainPage RootPage { get =>  Application.Current.MainPage as MainPage; }
+        //MainPage RootPage { get =>  Application.Current.MainPage as MainPage; }
         List<HomeMenuItem> menuItems;
         public MenuPage()
         { 
@@ -34,7 +34,6 @@ namespace ToDoApp.Views
                         return;
 
                     var id = (int)((HomeMenuItem)e.SelectedItem).Id;
-                    await RootPage.NavigateFromMenu(id);
                 };
             }
             catch

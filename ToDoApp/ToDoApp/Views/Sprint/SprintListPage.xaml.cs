@@ -36,7 +36,7 @@ namespace ToDoApp.Views.Sprint
             if (item == null)
                 return; 
             Application.Current.Properties["SprintId"] = item.Id.ToString();
-            await Navigation.PushAsync(new NavigationPage(new TodoListPage()));
+            await Navigation.PushAsync(new NavigationPage(new Todo.TodoListPage()));
 
 
             // Manually deselect item.

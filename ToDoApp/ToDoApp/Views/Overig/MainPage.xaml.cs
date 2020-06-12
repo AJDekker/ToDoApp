@@ -10,56 +10,42 @@ using ToDoApp.Models;
 using ToDoApp.Services;
 using ToDoApp.Views.Sprint;
 using ToDoApp.Views.Todo;
+using ToDoApp.ViewModels;
+using ToDoApp.WeatherRestClient;
 
-namespace ToDoApp.Views
+namespace ToDoApp.Views 
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
-    [DesignTimeVisible(false)]
-    public partial class MainPage : MasterDetailPage
+    public partial class MainPage : ContentPage
     {
-
-        Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
-
-        private readonly INavigationService _navigationService;
         public MainPage()
         {
+
+            var api = new WeatherAPI();
+            var pageService = new PageService();
+            ViewModel = new WeatherPageViewModel(api, pageService);
+
             InitializeComponent();
-
-            MasterBehavior = MasterBehavior.Popover;
-
-            MenuPages.Add((int)MenuItemType.Welcome, (NavigationPage)Detail);
-
-            _navigationService = App.NavigationService;
-
-            NavigationPage.SetHasNavigationBar(this, false);
-        } 
-        public async Task NavigateFromMenu(int id)
-        {
-            if (!MenuPages.ContainsKey(id))
-            {
-                switch (id)
-                {  
-                    case (int)MenuItemType.Sprint:
-                        MenuPages.Add(id, new NavigationPage(new SprintListPage()));
-                        break;
-                    case (int)MenuItemType.Todo:
-                        MenuPages.Add(id, new NavigationPage(new TodoListPage()));
-                        break;
-                }
-            }
-
-            var newPage = MenuPages[id];
-
-            if (newPage != null && Detail != newPage)
-            {
-                Detail = newPage;
-
-                if (Device.RuntimePlatform == Device.Android)
-                    await Task.Delay(100);
-
-                IsPresented = false;
-            }
         }
+
+
+        public WeatherPageViewModel ViewModel
+        {
+            get { return BindingContext as WeatherPageViewModel; }
+            set { BindingContext = value; }
+        }
+
+
+        void OnCitySelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ViewModel.SelectWeatherCommand.Execute(e.SelectedItem);
+        }
+
+        protected override void OnAppearing()
+        {
+            ViewModel.LoadDataCommand.Execute(null);
+
+            base.OnAppearing();
+        } 
+
     }
-}
+} 

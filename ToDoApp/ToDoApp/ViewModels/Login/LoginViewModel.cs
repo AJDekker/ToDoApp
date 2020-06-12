@@ -63,7 +63,7 @@ namespace ToDoApp.ViewModels
         {
             get
             {
-                return new Command(() => { App.Current.MainPage.Navigation.PushModalAsync(new SignUpPage()); });
+                return new Command(() => { App.Current.MainPage.Navigation.PushModalAsync(new ToDoApp.Views.SignUpPage()); });
             }
         }
 
@@ -86,8 +86,8 @@ namespace ToDoApp.ViewModels
                         //pass user email to welcom page 
                         Application.Current.Properties["id"] = user.Id.ToString(); 
 
-                        var navpage = new NavigationPage(new LoginPage());
-                        await navpage.PushAsync(new AboutPage());
+                        var navpage = new NavigationPage(new ToDoApp.Views.LoginPage());
+                        await navpage.PushAsync(new ToDoApp.Views.AboutPage());
                     }
                     else
                         await App.Current.MainPage.DisplayAlert("Login Fail", "Please enter correct Email and Password", "OK");

@@ -4,7 +4,6 @@ using Xamarin.Forms.Xaml;
 using ToDoApp.Services;
 using ToDoApp.Views; 
 
-
 namespace ToDoApp
 {
     public partial class App : Application
