@@ -6,6 +6,7 @@ using TodoApp.ViewModels;
 using ToDoApp.Repository;
 using ToDoApp.ViewModels;
 using ToDoApp.ViewModels.Sprint;
+using ToDoApp.ViewModels.Weather;
 using Xamarin.Forms;
 
 namespace ToDoApp.Services
@@ -34,6 +35,7 @@ namespace ToDoApp.Services
 			cb.RegisterType<LoginViewModel>().SingleInstance();
 			cb.RegisterType<SignUpViewModel>().SingleInstance();
 			cb.RegisterType<WelcomePageViewModel>().SingleInstance();
+			cb.RegisterType<WeatherViewModel>().SingleInstance();
 		}
 	}
 }

@@ -15,6 +15,7 @@ using ToDoApp.Repository;
 using ToDoApp.Services;
 using ToDoApp.ViewModels;
 using ToDoApp.ViewModels.Sprint;
+using ToDoApp.ViewModels.Weather;
 
 namespace ToDoApp.Droid
 {
@@ -35,6 +36,7 @@ namespace ToDoApp.Droid
 			cb.RegisterType<LoginViewModel>().SingleInstance();
 			cb.RegisterType<SignUpViewModel>().SingleInstance();
 			cb.RegisterType<WelcomePageViewModel>().SingleInstance();
+			cb.RegisterType<WeatherViewModel>().SingleInstance();
 		}
 	}
 }

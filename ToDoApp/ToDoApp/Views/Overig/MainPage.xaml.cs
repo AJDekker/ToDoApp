@@ -47,7 +47,7 @@ namespace ToDoApp.Views
                         MenuPages.Add(id, new NavigationPage(new TodoListPage()));
                         break;
                     case (int)MenuItemType.Weather:
-                        MenuPages.Add(id, new NavigationPage(new ToDoApp.Views.WeatherPage()));
+                        MenuPages.Add(id, new NavigationPage(new WeatherPage()));
                         break;
                 }
             }

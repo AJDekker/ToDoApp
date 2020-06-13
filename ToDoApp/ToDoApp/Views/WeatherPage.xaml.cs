@@ -1,38 +1,24 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using TodoApp.Services;
 using ToDoApp.Models;
 using ToDoApp.Services;
+using ToDoApp.ViewModels.Weather;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace ToDoApp.Views
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WeatherPage : ContentPage
     {
-        RestService _restService;
+        WeatherViewModel weatherViewModel;
 
         public WeatherPage()
         {
             InitializeComponent();
-
-            _restService = new RestService();
-        }
-
-        async void OnGetWeatherButtonClicked(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(_cityEntry.Text))
-            {
-                WeatherData weatherData = await _restService.GetWeatherData(GenerateRequestUri(Constants.OpenWeatherMapEndpoint));
-                BindingContext = weatherData;
-            }
-        }
-
-        string GenerateRequestUri(string endpoint)
-        {
-            string requestUri = endpoint;
-            requestUri += $"?q={_cityEntry.Text}";
-            requestUri += "&units=imperial"; // or units=metric
-            requestUri += $"&APPID={Constants.OpenWeatherMapAPIKey}";
-            return requestUri;
-        }
+            weatherViewModel = AppContainer.Container.Resolve<WeatherViewModel>();
+            BindingContext = weatherViewModel;
+        } 
     }
 }

@@ -10,7 +10,6 @@ namespace ToDoApp.ViewModels.Sprint
     {
         private Guid Id = new Guid("058ba2ce-121b-44fc-a806-e5c7764d5bf4");
 
-      
 
         private string name;
         public string Name
