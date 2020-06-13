@@ -18,10 +18,10 @@ namespace ToDoApp.Repository
         Task<bool> AddUser(string email, string password);
 
         //Update 
-        Task<bool> UpdateUser(string email, string password);
+        Task<bool> UpdateUser(Guid Id, string email, string password);
 
         //Delete User
-        Task<bool> DeleteUser(string email);
+        Task<bool> DeleteUser(Guid Id);
 
     }
 }

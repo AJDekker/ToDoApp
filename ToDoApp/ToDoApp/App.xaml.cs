@@ -16,7 +16,7 @@ namespace ToDoApp
 
             DependencyService.Register<MockDataStore>();
             AppContainer.Container = setup.CreateContainer();
-            Application.Current.Properties["email"] = "";
+            Application.Current.Properties["id"] = "";
 
             NavigationService.Configure("MainPage", typeof(Views.MainPage));
             NavigationService.Configure("AboutPage", typeof(Views.AboutPage)); 

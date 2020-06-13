@@ -15,6 +15,11 @@ namespace ToDoApp.Repository
             return await TodoFirebaseHelper.GetAllTodo();
         }
 
+        public async Task<List<Todo>> GetAllTodoBySprint()
+        {
+            return await TodoFirebaseHelper.GetAllTodoBySprint();
+        }
+
         //Read 
         public async Task<Todo> GetTodo(Guid Id)
         {
@@ -22,9 +27,9 @@ namespace ToDoApp.Repository
         }
 
         //Inser a user
-        public async Task<bool> AddTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due)
+        public async Task<bool> AddTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due, Guid sprintId)
         {
-            return await TodoFirebaseHelper.AddTodo(Id, Name, Description, StoryPoints, Due);
+            return await TodoFirebaseHelper.AddTodo(Id, Name, Description, StoryPoints, Due, sprintId);
         }
 
         //Update 

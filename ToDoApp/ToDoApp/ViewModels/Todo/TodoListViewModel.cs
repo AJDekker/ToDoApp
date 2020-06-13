@@ -13,10 +13,10 @@ namespace ToDoApp.ViewModels
     public class TodoListViewModel : BaseViewModel
     {
         public ObservableCollection<Todo> Items { get; set; }
-        public Command LoadItemsCommand { get; set; }
+        public Command LoadItemsCommand { get; set; } 
 
         public TodoListViewModel()
-        {
+        { 
             Title = "Browse";
             Items = new ObservableCollection<Todo>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
@@ -33,12 +33,11 @@ namespace ToDoApp.ViewModels
             if (IsBusy)
                 return;
 
-            IsBusy = true;
-
+            IsBusy = true; 
             try
             {
                 Items.Clear();
-                var items = await TodoFirebaseHelper.GetAllTodo();
+                var items = await TodoFirebaseHelper.GetAllTodoBySprint();
                 foreach (var item in items)
                 {
                     Items.Add(item);

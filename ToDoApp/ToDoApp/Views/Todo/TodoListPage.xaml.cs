@@ -10,6 +10,8 @@ using Xamarin.Forms.Xaml;
 using ToDoApp.Models;
 using ToDoApp.Views;
 using ToDoApp.ViewModels;
+using Autofac.Core;
+using Autofac;
 
 namespace ToDoApp.Views.Todo
 {
@@ -18,13 +20,13 @@ namespace ToDoApp.Views.Todo
     [DesignTimeVisible(false)]
     public partial class TodoListPage : ContentPage
     {
-        TodoListViewModel viewModel;
+        TodoListViewModel viewModel; 
 
         public TodoListPage()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new TodoListViewModel();
+            viewModel = Services.AppContainer.Container.Resolve<TodoListViewModel>(); 
+            BindingContext = viewModel;
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -40,8 +42,10 @@ namespace ToDoApp.Views.Todo
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)
-        {
+        { 
             await Navigation.PushModalAsync(new NavigationPage(new AddTodo()));
+            Console.WriteLine("tesaaaat");
+            Console.WriteLine(Id);
         }
 
         protected override void OnAppearing()

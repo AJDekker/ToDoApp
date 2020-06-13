@@ -28,15 +28,15 @@ namespace ToDoApp.Repository
         }
 
         //Update 
-        public async Task<bool> UpdateUser(string email, string password)
+        public async Task<bool> UpdateUser(Guid Id, string email, string password)
         {
-            return await UserFirebaseHelper.UpdateUser(email, password);
+            return await UserFirebaseHelper.UpdateUser(Id, email, password);
         }
 
         //Delete User
-        public async Task<bool> DeleteUser(string email)
+        public async Task<bool> DeleteUser(Guid Id)
         {
-            return await UserFirebaseHelper.DeleteUser(email);
+            return await UserFirebaseHelper.DeleteUser(Id);
         }
 
     }

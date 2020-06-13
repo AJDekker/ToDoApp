@@ -21,12 +21,9 @@ namespace ToDoApp.Views
             {
                 InitializeComponent(); 
                 menuItems = new List<HomeMenuItem>
-            {
-                new HomeMenuItem {Id = MenuItemType.Login, Title="Login" },
-                new HomeMenuItem {Id = MenuItemType.Items, Title="Items list" }, 
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" },
-                new HomeMenuItem {Id = MenuItemType.Todo, Title="Todo" },
-                new HomeMenuItem {Id = MenuItemType.Sprint, Title="Sprint" }
+            { 
+                new HomeMenuItem {Id = MenuItemType.Sprint, Title="Sprint" },
+                new HomeMenuItem {Id = MenuItemType.Todo, Title="Activiteiten" }
             };
 
                 ListViewMenu.ItemsSource = menuItems; 

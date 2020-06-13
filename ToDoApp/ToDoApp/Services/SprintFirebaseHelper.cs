@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ToDoApp.Models;
+using Xamarin.Forms;
 
 namespace ToDoApp.ViewModels
 {
@@ -17,13 +18,16 @@ namespace ToDoApp.ViewModels
         //Read All
         public static async Task<List<ToDoApp.Models.Sprint>> GetAllSprint()
         {
+            Guid PersonId = new Guid(Application.Current.Properties["id"].ToString());
+
             try
             {
                 var SprintList = (await firebase
                 .Child("Sprint")
-                .OnceAsync<ToDoApp.Models.Sprint>()).Select(item =>
+                .OnceAsync<ToDoApp.Models.Sprint>()).Where(item => item.Object.PersonId == PersonId).Select(item =>
                 new ToDoApp.Models.Sprint
                 {
+                    Id = item.Object.Id,
                     Name = item.Object.Name, 
                     StoryPoints = item.Object.StoryPoints, 
                 }).ToList();
@@ -57,11 +61,12 @@ namespace ToDoApp.ViewModels
         //Inser a Sprint
         public static async Task<bool> AddSprint(Guid Id, string Name, int StoryPoints)
         {
+            Guid PersonId = new Guid(Application.Current.Properties["id"].ToString()); 
             try
             { 
                 await firebase
                 .Child("Sprint")
-                .PostAsync(new ToDoApp.Models.Sprint() { Name = Name, StoryPoints = StoryPoints });
+                .PostAsync(new ToDoApp.Models.Sprint() {Id = Id, Name = Name, StoryPoints = StoryPoints, PersonId = PersonId });
                 return true;
             }
             catch (Exception e)

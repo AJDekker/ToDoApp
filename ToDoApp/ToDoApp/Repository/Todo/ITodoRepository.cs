@@ -10,11 +10,13 @@ namespace ToDoApp.Repository
     {
         Task<List<Todo>> GetAllTodo();
 
+        Task<List<Todo>> GetAllTodoBySprint();
+
         //Read 
         Task<Todo> GetTodo(Guid Id);
 
         //Inser a todo
-        Task<bool> AddTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due);
+        Task<bool> AddTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due, Guid sprintId);
 
         //Update todo
         Task<bool> UpdateTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due);

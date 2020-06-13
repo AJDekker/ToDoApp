@@ -21,6 +21,17 @@ namespace ToDoApp.ViewModels
             _navigationService = App.NavigationService;
         }
 
+        private Guid id;
+        public Guid Id
+        {
+            get { return id; }
+            set
+            {
+                id = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Id"));
+            }
+        }
+
         private string email;
         public string Email
         {
@@ -72,8 +83,8 @@ namespace ToDoApp.ViewModels
                     {
                         await App.Current.MainPage.DisplayAlert("Login Success", "", "Ok");
                         //Navigate to Wellcom page after successfuly login
-                        //pass user email to welcom page
-                        Application.Current.Properties["email"] = Email;
+                        //pass user email to welcom page 
+                        Application.Current.Properties["id"] = user.Id.ToString(); 
 
                         var navpage = new NavigationPage(new LoginPage());
                         await navpage.PushAsync(new AboutPage());

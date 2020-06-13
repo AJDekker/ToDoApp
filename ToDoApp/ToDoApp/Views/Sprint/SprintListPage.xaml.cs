@@ -10,8 +10,9 @@ using Xamarin.Forms.Xaml;
 using ToDoApp.Models;
 using ToDoApp.Views;
 using ToDoApp.ViewModels;
-using ToDoApp.ViewModels.Sprint;
+using ToDoApp.ViewModels.Sprint; 
 using ToDoApp.Views.Sprint;
+using ToDoApp.Views.Todo;
 
 namespace ToDoApp.Views.Sprint
 {
@@ -33,9 +34,10 @@ namespace ToDoApp.Views.Sprint
         {
             var item = args.SelectedItem as ToDoApp.Models.Sprint;
             if (item == null)
-                return;
+                return; 
+            Application.Current.Properties["SprintId"] = item.Id.ToString();
+            await Navigation.PushAsync(new NavigationPage(new TodoListPage()));
 
-            await Navigation.PushModalAsync(new SprintDetailPage(new SprintDetailViewModel(item)));
 
             // Manually deselect item.
         }

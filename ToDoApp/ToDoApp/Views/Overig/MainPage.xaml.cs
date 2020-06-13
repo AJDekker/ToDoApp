@@ -33,30 +33,18 @@ namespace ToDoApp.Views
             _navigationService = App.NavigationService;
 
             NavigationPage.SetHasNavigationBar(this, false);
-        }
-
-       
-
+        } 
         public async Task NavigateFromMenu(int id)
         {
             if (!MenuPages.ContainsKey(id))
             {
                 switch (id)
-                {
-                    case (int)MenuItemType.Login:
-                        MenuPages.Add(id, new NavigationPage(new LoginPage()));
-                        break;
-                    case (int)MenuItemType.Items:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
-                        break;  
-                    case (int)MenuItemType.About:
-                        MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                {  
+                    case (int)MenuItemType.Sprint:
+                        MenuPages.Add(id, new NavigationPage(new SprintListPage()));
                         break;
                     case (int)MenuItemType.Todo:
                         MenuPages.Add(id, new NavigationPage(new TodoListPage()));
-                        break;
-                    case (int)MenuItemType.Sprint:
-                        MenuPages.Add(id, new NavigationPage(new SprintListPage()));
                         break;
                 }
             }

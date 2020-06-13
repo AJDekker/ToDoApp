@@ -40,6 +40,7 @@ namespace ToDoApp.ViewModels.Sprint
                 foreach (var item in items)
                 {
                     Items.Add(item);
+                    Console.WriteLine(item.Id);
                 }
             }
             catch (Exception ex)
