@@ -28,7 +28,7 @@ namespace ToDoApp
             NavigationService.Configure("SignUpPage", typeof(Views.SignUpPage)); 
             NavigationService.Configure("WelcomePage", typeof(Views.WelcomePage));  
             var mainPage = ((NavigationService)NavigationService).SetRootPage("MainPage");
-            MainPage = new MainPage();
+            MainPage = new ToDoApp.Views.MainPage();
         }
 
         public static INavigationService NavigationService { get; } = new NavigationService();
