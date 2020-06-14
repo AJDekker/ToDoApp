@@ -27,15 +27,15 @@ namespace ToDoApp.Repository
         }
 
         //Inser a user
-        public async Task<bool> AddTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due, Guid sprintId)
+        public async Task<bool> AddTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due, Guid sprintId, string city)
         {
-            return await TodoFirebaseHelper.AddTodo(Id, Name, Description, StoryPoints, Due, sprintId);
+            return await TodoFirebaseHelper.AddTodo(Id, Name, Description, StoryPoints, Due, sprintId, city);
         }
 
         //Update 
-        public async Task<bool> UpdateTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due)
+        public async Task<bool> UpdateTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due, string city)
         {
-            return await TodoFirebaseHelper.UpdateTodo(Id, Name, Description, StoryPoints, Due);
+            return await TodoFirebaseHelper.UpdateTodo(Id, Name, Description, StoryPoints, Due, city);
         }
 
         //Delete User

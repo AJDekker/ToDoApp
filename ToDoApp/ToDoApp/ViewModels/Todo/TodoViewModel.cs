@@ -76,7 +76,18 @@ namespace TodoApp.ViewModels
                 storyPoints = value;
                 PropertyChanged(this, new PropertyChangedEventArgs("Storypoints"));
             }
-        } 
+        }
+
+        private string city;
+        public string City
+        {
+            get { return city; }
+            set
+            {
+                city = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("City"));
+            }
+        }
 
         public Guid sprintId; 
 
@@ -99,7 +110,7 @@ namespace TodoApp.ViewModels
             else
             {
                 //call AddUser function which we define in Firebase helper class
-                var todo = await TodoFirebaseHelper.AddTodo(Id, Name, Description,  StoryPoints, Due, sprintId);
+                var todo = await TodoFirebaseHelper.AddTodo(Id, Name, Description,  StoryPoints, Due, sprintId, City);
                 //AddUser return true if data insert successfuly 
                 if (todo)
                 {

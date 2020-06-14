@@ -29,7 +29,8 @@ namespace ToDoApp.ViewModels
                     Name = item.Object.Name,
                     Description = item.Object.Description,
                     StoryPoints = item.Object.StoryPoints,
-                    Due = item.Object.Due
+                    Due = item.Object.Due,
+                    City = item.Object.City
                 }).ToList(); 
                 return todoList;
             }
@@ -55,7 +56,8 @@ namespace ToDoApp.ViewModels
                     Name = item.Object.Name,
                     Description = item.Object.Description,
                     StoryPoints = item.Object.StoryPoints,
-                    Due = item.Object.Due
+                    Due = item.Object.Due,
+                    City = item.Object.City
                 }).ToList();
                 return todoList;
             }
@@ -87,14 +89,14 @@ namespace ToDoApp.ViewModels
         }
 
         //Inser a todo
-        public static async Task<bool> AddTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due, Guid SprintId)
+        public static async Task<bool> AddTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due, Guid SprintId, string city)
         {
             Guid PersonId = new Guid(Application.Current.Properties["id"].ToString());
             try
             { 
                 await firebase
                 .Child("Todo")
-                .PostAsync(new Todo() { Name = Name, Description = Description, StoryPoints = StoryPoints, Due = Due, SprintId = SprintId, PersonId = PersonId });
+                .PostAsync(new Todo() { Name = Name, Description = Description, StoryPoints = StoryPoints, Due = Due, SprintId = SprintId, PersonId = PersonId, City = city });
                 return true;
             }
             catch (Exception e)
@@ -105,7 +107,7 @@ namespace ToDoApp.ViewModels
         }
 
         //Update 
-        public static async Task<bool> UpdateTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due)
+        public static async Task<bool> UpdateTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due, string city)
         {
             try
             {
@@ -117,7 +119,7 @@ namespace ToDoApp.ViewModels
                 await firebase
                 .Child("Users")
                 .Child(toUpdateTodo.Key)
-                .PutAsync(new Todo() { Name = Name, Description = Description, StoryPoints = StoryPoints, Due = Due});
+                .PutAsync(new Todo() { Name = Name, Description = Description, StoryPoints = StoryPoints, Due = Due, City = city});
                 return true;
             }
             catch (Exception e)

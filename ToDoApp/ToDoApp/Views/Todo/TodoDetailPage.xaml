@@ -17,6 +17,10 @@
         <Label Text="{Binding Item.StoryPoints}" d:Text="Item storypoints" FontSize="Small"/>
         <Label Text="Due date:" FontSize="Medium" />
         <Label Text="{Binding Item.Due}" d:Text="Item Due date" FontSize="Small"/>
+        <Label Text="{Binding City}" d:Text="Item Due date" FontSize="Small"/>
+        <Label Text="{Binding Temperature}" />
+        <Label Text="{Binding Speed}" />
+        <Label Text="{Binding Humidity}" />
     </StackLayout>
     
 </ContentPage>

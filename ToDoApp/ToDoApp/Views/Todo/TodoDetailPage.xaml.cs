@@ -3,7 +3,11 @@ using System.ComponentModel;
 using Xamarin.Forms; 
 
 using ToDoApp.Models;
-using ToDoApp.ViewModels; 
+using ToDoApp.ViewModels;
+using ToDoApp.ViewModels.Weather;
+using System.Net.Http;
+using TodoApp.Services;
+using ToDoApp.Services;
 
 namespace ToDoApp.Views.Todo
 {
@@ -12,13 +16,18 @@ namespace ToDoApp.Views.Todo
     [DesignTimeVisible(false)]
     public partial class TodoDetailPage : ContentPage
     {
-        TodoDetailViewModel viewModel;
-
-        public TodoDetailPage(TodoDetailViewModel viewModel)
+        TodoDetailViewModel viewModel; 
+        HttpClient _client;
+        RestService _restService;
+        TodoDetailViewModel todoDetailViewModel;
+        string City;
+        public TodoDetailPage(ToDoApp.Models.Todo item)
         {
             InitializeComponent();
-
-            BindingContext = this.viewModel = viewModel;
+            City = item.City;
+            _restService = new RestService();
+            todoDetailViewModel = new TodoDetailViewModel();
+            start(todoDetailViewModel);
         }
 
         public TodoDetailPage()
@@ -33,6 +42,24 @@ namespace ToDoApp.Views.Todo
 
             viewModel = new TodoDetailViewModel(item);
             BindingContext = viewModel;
+        }
+
+        async void start(TodoDetailViewModel todoDetailViewModel)
+        {
+            WeatherData weatherData = await _restService.GetWeatherData(GenerateRequestUri(Constants.OpenWeatherMapEndpoint)); 
+            todoDetailViewModel.Temperature = weatherData.Main.Temperature;
+            todoDetailViewModel.Humidity = weatherData.Main.Humidity;
+            todoDetailViewModel.Speed = weatherData.Wind.Speed;
+            BindingContext = this.viewModel = todoDetailViewModel;
+        }
+
+        string GenerateRequestUri(string endpoint)
+        {
+            string requestUri = endpoint;
+            requestUri += $"?q={City}";
+            requestUri += "&units=imperial"; // or units=metric
+            requestUri += $"&APPID={Constants.OpenWeatherMapAPIKey}";
+            return requestUri;
         }
     }
 }

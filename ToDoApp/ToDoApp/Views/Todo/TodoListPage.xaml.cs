@@ -12,6 +12,7 @@ using ToDoApp.Views;
 using ToDoApp.ViewModels;
 using Autofac.Core;
 using Autofac;
+using ToDoApp.ViewModels.Weather;
 
 namespace ToDoApp.Views.Todo
 {
@@ -33,9 +34,8 @@ namespace ToDoApp.Views.Todo
         {
             var item = args.SelectedItem as ToDoApp.Models.Todo;
             if (item == null)
-                return;
-
-            await Navigation.PushModalAsync(new TodoDetailPage(new TodoDetailViewModel(item)));
+                return; 
+            await Navigation.PushModalAsync(new TodoDetailPage(item));
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;

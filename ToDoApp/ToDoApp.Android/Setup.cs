@@ -31,6 +31,7 @@ namespace ToDoApp.Droid
 			cb.RegisterType<LoginViewModel>().SingleInstance();
 			cb.RegisterType<SprintViewModel>().SingleInstance();
 			cb.RegisterType<TodoViewModel>().SingleInstance();
+			cb.RegisterType<TodoDetailViewModel>().SingleInstance();
 			cb.RegisterType<AboutViewModel>().SingleInstance();
 			cb.RegisterType<ItemDetailViewModel>().SingleInstance(); 
 			cb.RegisterType<LoginViewModel>().SingleInstance();

@@ -18,5 +18,6 @@ namespace ToDoApp.Models
         //public Epic Epic { get; set; }
         public Guid SprintId { get; set; }
         public Sprint Sprint { get; set; }
+        public string City { get; set; }
     }
 }

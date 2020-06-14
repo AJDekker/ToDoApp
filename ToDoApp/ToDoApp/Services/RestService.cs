@@ -31,7 +31,7 @@ namespace TodoApp.Services
             catch (Exception ex)
             {
                 Debug.WriteLine("\t\tERROR {0}", ex.Message);
-            }
+            } 
 
             return weatherData;
         }

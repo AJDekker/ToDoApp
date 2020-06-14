@@ -15,6 +15,8 @@
                    />
             <Entry x:Name="StoryPointsentry" Placeholder="StoryPoints" Text="{Binding StoryPoints}" Keyboard="Numeric"
                     />
+            <Entry x:Name="City" Placeholder="City" Text="{Binding City}"  
+                    />
             <DatePicker x:Name="Dueentry"  Date="{Binding Due}"  />
                      
             <Button x:Name="SaveCommand" Text="SaveTodo" Command="{Binding SaveCommand}" HorizontalOptions="Center"/>

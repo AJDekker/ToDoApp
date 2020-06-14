@@ -23,11 +23,16 @@ namespace ToDoApp.ViewModels.Weather
         HttpClient _client;
         RestService _restService;
 
-        public WeatherViewModel()
+        public WeatherViewModel(string cityName = null)
         { 
             _client = new HttpClient();
             _restService = new RestService();
-            city = "Amsterdam";
+            city = cityName;
+            if(city == null)
+            {
+                city = "Amsterdam";
+            }
+                    
             GetResultWeather();
         }
                
@@ -104,13 +109,13 @@ namespace ToDoApp.ViewModels.Weather
             }
         }
 
-            string GenerateRequestUri(string endpoint)
-            {
-                string requestUri = endpoint;
-                requestUri += $"?q={city}";
-                requestUri += "&units=imperial"; // or units=metric
-                requestUri += $"&APPID={Constants.OpenWeatherMapAPIKey}";
-                return requestUri;
-            }
+        string GenerateRequestUri(string endpoint)
+        {
+            string requestUri = endpoint;
+            requestUri += $"?q={city}";
+            requestUri += "&units=imperial"; // or units=metric
+            requestUri += $"&APPID={Constants.OpenWeatherMapAPIKey}";
+            return requestUri;
+         }
         }
     }

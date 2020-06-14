@@ -30,6 +30,7 @@ namespace ToDoApp.Services
 			cb.RegisterType<SprintViewModel>().SingleInstance();
 			cb.RegisterType<TodoViewModel>().SingleInstance();
 			cb.RegisterType<TodoListViewModel>().SingleInstance();
+			cb.RegisterType<TodoDetailViewModel>().SingleInstance();
 			cb.RegisterType<AboutViewModel>().SingleInstance();
 			cb.RegisterType<ItemDetailViewModel>().SingleInstance(); 
 			cb.RegisterType<LoginViewModel>().SingleInstance();
