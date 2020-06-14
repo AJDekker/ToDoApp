@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using ToDoApp.ViewModels;
@@ -17,7 +18,8 @@ namespace ToDoApp.Views
         public AboutPage()
         {
             InitializeComponent();
-            BindingContext = viewmodel = new AboutViewModel(); 
+            viewmodel = Services.AppContainer.Container.Resolve<AboutViewModel>();
+            BindingContext = viewmodel; 
         }
     }
 }

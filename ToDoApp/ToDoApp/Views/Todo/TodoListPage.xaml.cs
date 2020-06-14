@@ -29,6 +29,7 @@ namespace ToDoApp.Views.Todo
             BindingContext = viewModel;
         }
 
+        //TODO: MVVM
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var item = args.SelectedItem as ToDoApp.Models.Todo;

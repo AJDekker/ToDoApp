@@ -13,6 +13,7 @@ using ToDoApp.ViewModels;
 using ToDoApp.ViewModels.Sprint; 
 using ToDoApp.Views.Sprint;
 using ToDoApp.Views.Todo;
+using Autofac;
 
 namespace ToDoApp.Views.Sprint
 {
@@ -26,9 +27,11 @@ namespace ToDoApp.Views.Sprint
         public SprintListPage()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new SprintListViewModel();
+            viewModel = Services.AppContainer.Container.Resolve<SprintListViewModel>();
+            BindingContext = viewModel;
         }
+
+        //TODO: MVVM
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
