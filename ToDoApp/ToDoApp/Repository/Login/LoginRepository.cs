@@ -15,25 +15,25 @@ namespace ToDoApp.Repository
             return await UserFirebaseHelper.GetAllUser();
         }
 
-        //Read 
+        // Read 
         public async Task<Person> GetUser(string email)
         {
             return await UserFirebaseHelper.GetUser(email);
         }
 
-        //Inser a user
+        // Inser a user
         public async Task<bool> AddUser(string email, string password)
         {
             return await UserFirebaseHelper.AddUser(email, password);
         }
 
-        //Update 
+        // Update 
         public async Task<bool> UpdateUser(Guid Id, string email, string password)
         {
             return await UserFirebaseHelper.UpdateUser(Id, email, password);
         }
 
-        //Delete User
+        // Delete User
         public async Task<bool> DeleteUser(Guid Id)
         {
             return await UserFirebaseHelper.DeleteUser(Id);

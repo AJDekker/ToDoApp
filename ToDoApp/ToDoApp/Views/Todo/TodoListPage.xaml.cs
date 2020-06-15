@@ -15,8 +15,7 @@ using Autofac;
 
 namespace ToDoApp.Views.Todo
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
+
     [DesignTimeVisible(false)]
     public partial class TodoListPage : ContentPage
     {
@@ -29,7 +28,7 @@ namespace ToDoApp.Views.Todo
             BindingContext = viewModel;
         }
 
-        //TODO: MVVM
+
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             var item = args.SelectedItem as ToDoApp.Models.Todo;
@@ -38,7 +37,7 @@ namespace ToDoApp.Views.Todo
 
             await Navigation.PushModalAsync(new TodoDetailPage(new TodoDetailViewModel(item)));
 
-            // Manually deselect item.
+
             ItemsListView.SelectedItem = null;
         }
 

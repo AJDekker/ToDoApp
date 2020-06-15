@@ -10,17 +10,16 @@ namespace ToDoApp.Repository
     {
         Task<List<Person>> GetAllUser();
 
-        //Read 
-        //Read 
+        // Read 
         Task<Person> GetUser(string email);
 
-        //Inser a user
+        // Inser a user
         Task<bool> AddUser(string email, string password);
 
-        //Update 
+        // Update user 
         Task<bool> UpdateUser(Guid Id, string email, string password);
 
-        //Delete User
+        // Delete User
         Task<bool> DeleteUser(Guid Id);
 
     }

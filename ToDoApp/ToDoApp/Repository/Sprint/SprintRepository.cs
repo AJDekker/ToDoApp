@@ -15,25 +15,25 @@ namespace ToDoApp.Repository.Sprint
             return await SprintFirebaseHelper.GetAllSprint();
         }
 
-        //Read 
+        // Read 
         public async Task<ToDoApp.Models.Sprint> GetSprint(Guid Id)
         {
             return await SprintFirebaseHelper.GetSprint(Id);
         }
 
-        //Inser a user
+        // Inser a user
         public async Task<bool> AddSprint(Guid Id, string Name,  int StoryPoints )
         {
             return await SprintFirebaseHelper.AddSprint(Id, Name, StoryPoints );
         }
 
-        //Update 
+        // Update 
         public async Task<bool> UpdateSprint(Guid Id, string Name, int StoryPoints )
         {
             return await SprintFirebaseHelper.UpdateSprint(Id, Name , StoryPoints);
         }
 
-        //Delete User
+        // Delete User
         public async Task<bool> DeleteSprint(Guid Id)
         {
             return await SprintFirebaseHelper.DeleteSprint(Id);

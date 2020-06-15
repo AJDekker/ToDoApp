@@ -17,8 +17,7 @@ using Autofac;
 
 namespace ToDoApp.Views.Sprint
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
+
     [DesignTimeVisible(false)]
     public partial class SprintListPage : ContentPage
     {
@@ -31,7 +30,7 @@ namespace ToDoApp.Views.Sprint
             BindingContext = viewModel;
         }
 
-        //TODO: MVVM
+
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
@@ -42,7 +41,6 @@ namespace ToDoApp.Views.Sprint
             await Navigation.PushAsync(new NavigationPage(new TodoListPage()));
 
 
-            // Manually deselect item.
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)

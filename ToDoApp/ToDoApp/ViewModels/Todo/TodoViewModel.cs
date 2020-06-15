@@ -127,22 +127,19 @@ namespace TodoApp.ViewModels
         } 
 
         public async void AddTodo()
-        {
-            //null or empty field validation, check weather email and password is null or empty
+        { 
 
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(description)) {
                 //await App.Current.MainPage.DisplayAlert("Empty Values", "Please enter Name and Description", "OK");
             } else
-            {
-                    //call AddUser function which we define in Firebase helper class
+            { 
                     var todo = await _todoRepository.AddTodo(Id, name, description, storyPoints, due, SprintId);
                    
-                    //AddUser return true if data insert successfuly 
+
                     if (todo != null)
                     {
-                    //await App.Current.MainPage.DisplayAlert("Save todo Success", "", "Ok");
-                    //Navigate to Wellcom page after successfuly SignUp
-                    //pass user email to welcom page
+                    //await App.Current.MainPage.DisplayAlert("Save todo Success", "", "Ok"); 
+
                     //await App.Current.MainPage.Navigation.PushModalAsync(new TodoListPage());
                    
                     }
@@ -152,7 +149,7 @@ namespace TodoApp.ViewModels
 
         public async void UpdateTodo()
         {
-            //null or empty field validation, check weather email and password is null or empty
+
 
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(description))
             {
@@ -160,15 +157,15 @@ namespace TodoApp.ViewModels
             }
             else
             {
-                //call AddUser function which we define in Firebase helper class
+
                 var todo = await _todoRepository.UpdateTodo(Id, name, description, storyPoints, due);
 
-                //AddUser return true if data insert successfuly 
+
                 if (todo != null)
                 {
                     //await App.Current.MainPage.DisplayAlert("Save todo Success", "", "Ok");
-                    //Navigate to Wellcom page after successfuly SignUp
-                    //pass user email to welcom page
+
+
                     //await App.Current.MainPage.Navigation.PushModalAsync(new TodoListPage());
 
                 }
@@ -178,7 +175,7 @@ namespace TodoApp.ViewModels
 
         public async void Delete()
         {
-            //null or empty field validation, check weather email and password is null or empty
+
 
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(description))
             {
@@ -186,15 +183,14 @@ namespace TodoApp.ViewModels
             }
             else
             {
-                //call AddUser function which we define in Firebase helper class
+
                 var todo = await _todoRepository.DeleteTodo(Id);
 
                 //AddUser return true if data insert successfuly 
                 if (todo != null)
                 {
                     //await App.Current.MainPage.DisplayAlert("Save todo Success", "", "Ok");
-                    //Navigate to Wellcom page after successfuly SignUp
-                    //pass user email to welcom page
+
                     //await App.Current.MainPage.Navigation.PushModalAsync(new TodoListPage());
 
                 }
