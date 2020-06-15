@@ -23,7 +23,8 @@ namespace ToDoApp.Views
                 menuItems = new List<HomeMenuItem>
             { 
                 new HomeMenuItem {Id = MenuItemType.Sprint, Title="Sprint" },
-                new HomeMenuItem {Id = MenuItemType.Todo, Title="Activiteiten" }
+                new HomeMenuItem {Id = MenuItemType.Todo, Title="Activiteiten" }, 
+                new HomeMenuItem {Id = MenuItemType.Weather, Title="Weather" }
             };
 
                 ListViewMenu.ItemsSource = menuItems; 

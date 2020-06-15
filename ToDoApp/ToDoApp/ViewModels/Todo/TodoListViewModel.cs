@@ -7,21 +7,26 @@ using Xamarin.Forms;
 
 using ToDoApp.Models;
 using ToDoApp.Views;
+using ToDoApp.Repository;
 
 namespace ToDoApp.ViewModels
 {
     public class TodoListViewModel : BaseViewModel
     {
         public ObservableCollection<Todo> Items { get; set; }
-        public Command LoadItemsCommand { get; set; } 
+        public Command LoadItemsCommand { get; set; }
 
-        public TodoListViewModel()
+        ITodoRepository _todoRepository;
+
+        public TodoListViewModel(ITodoRepository todoRepository)
         { 
             Title = "Browse";
             Items = new ObservableCollection<Todo>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<AddTodo, Todo>(this, "AddTodo", async (obj, item) =>
+            _todoRepository = todoRepository;
+
+            MessagingCenter.Subscribe<ToDoApp.Views.AddTodo, Todo>(this, "AddTodo", async (obj, item) =>
             {
                 var newTodo = item as Todo;
                 Items.Add(newTodo); 
@@ -37,7 +42,7 @@ namespace ToDoApp.ViewModels
             try
             {
                 Items.Clear();
-                var items = await TodoFirebaseHelper.GetAllTodoBySprint();
+                var items = await _todoRepository.GetAllTodo();
                 foreach (var item in items)
                 {
                     Items.Add(item);
@@ -52,5 +57,7 @@ namespace ToDoApp.ViewModels
                 IsBusy = false;
             }
         }
+
+
     }
 }

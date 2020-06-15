@@ -61,7 +61,7 @@ namespace ToDoApp.ViewModels
         //Inser a Sprint
         public static async Task<bool> AddSprint(Guid Id, string Name, int StoryPoints)
         {
-            Guid PersonId = new Guid(Application.Current.Properties["id"].ToString()); 
+            Guid PersonId = Guid.NewGuid();
             try
             { 
                 await firebase

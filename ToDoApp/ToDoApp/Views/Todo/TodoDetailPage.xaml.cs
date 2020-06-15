@@ -20,19 +20,5 @@ namespace ToDoApp.Views.Todo
 
             BindingContext = this.viewModel = viewModel;
         }
-
-        public TodoDetailPage()
-        {
-            InitializeComponent();
-
-            var item = new ToDoApp.Models.Todo
-            {
-                Name = "Item 1",
-                Description = "This is an item description."
-            };
-
-            viewModel = new TodoDetailViewModel(item);
-            BindingContext = viewModel;
-        }
     }
 }

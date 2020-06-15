@@ -11,7 +11,7 @@ namespace TodoApp.Repository.Sprint
     {
         Task<List<ToDoApp.Models.Sprint>> GetAllSprint();
 
-        //Read 
+        // Read 
         Task<ToDoApp.Models.Sprint> GetSprint(Guid Id);
 
         //Inser a Sprint

@@ -13,11 +13,11 @@ using ToDoApp.ViewModels;
 using ToDoApp.ViewModels.Sprint; 
 using ToDoApp.Views.Sprint;
 using ToDoApp.Views.Todo;
+using Autofac;
 
 namespace ToDoApp.Views.Sprint
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
+
     [DesignTimeVisible(false)]
     public partial class SprintListPage : ContentPage
     {
@@ -26,9 +26,11 @@ namespace ToDoApp.Views.Sprint
         public SprintListPage()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new SprintListViewModel();
+            viewModel = Services.AppContainer.Container.Resolve<SprintListViewModel>();
+            BindingContext = viewModel;
         }
+
+
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
@@ -39,7 +41,6 @@ namespace ToDoApp.Views.Sprint
             await Navigation.PushAsync(new NavigationPage(new TodoListPage()));
 
 
-            // Manually deselect item.
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)

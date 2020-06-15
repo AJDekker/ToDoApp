@@ -7,25 +7,29 @@ using Xamarin.Forms;
 
 using ToDoApp.Models;
 using ToDoApp.Views;
+using ToDoApp.Repository;
 
 namespace ToDoApp.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class TodoListSprintViewModel : BaseViewModel
     {
-        public ObservableCollection<Item> Items { get; set; }
+        public ObservableCollection<Todo> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public ItemsViewModel()
-        {
+        ITodoRepository _todoRepository;
+
+        public TodoListSprintViewModel(ITodoRepository todoRepository)
+        { 
             Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            Items = new ObservableCollection<Todo>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            _todoRepository = todoRepository;
+
+            MessagingCenter.Subscribe<ToDoApp.Views.AddTodo, Todo>(this, "AddTodo", async (obj, item) =>
             {
-                var newItem = item as Item;
-                Items.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
+                var newTodo = item as Todo;
+                Items.Add(newTodo); 
             });
         }
 
@@ -34,12 +38,11 @@ namespace ToDoApp.ViewModels
             if (IsBusy)
                 return;
 
-            IsBusy = true;
-
+            IsBusy = true; 
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await _todoRepository.GetAllTodoBySprint();
                 foreach (var item in items)
                 {
                     Items.Add(item);

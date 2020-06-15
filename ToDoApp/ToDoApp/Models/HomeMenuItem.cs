@@ -11,7 +11,8 @@ namespace ToDoApp.Models
         Welcome,
         About,
         Todo,
-        Sprint
+        Sprint,
+        Weather
     }
     public class HomeMenuItem
     {

@@ -13,10 +13,10 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="5.2.0" />
     <PackageReference Include="Autofac.Extras.CommonServiceLocator" Version="6.0.0" />
-    <PackageReference Include="FirebaseDatabase.net" Version="4.0.4" />
-    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
-    <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />  
-    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="FirebaseDatabase.net" Version="4.0.4" /> 
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.847" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,20 +29,11 @@
     <Compile Update="Views\Todo\AddTodo.xaml.cs">
       <DependentUpon>AddTodo.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Item\ItemDetailPage.xaml.cs">
-      <DependentUpon>ItemDetailPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\Todo\TodoDetailPage.xaml.cs">
       <DependentUpon>TodoDetailPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Item\ItemsPage.xaml.cs">
-      <DependentUpon>ItemsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\Todo\TodoListPage.xaml.cs">
       <DependentUpon>TodoListPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Item\NewItemPage - Copy.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -57,6 +48,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Sprint\AddSprint.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\WeatherPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

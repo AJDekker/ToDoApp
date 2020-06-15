@@ -12,16 +12,16 @@ namespace ToDoApp.Repository
 
         Task<List<Todo>> GetAllTodoBySprint();
 
-        //Read 
+        // Read 
         Task<Todo> GetTodo(Guid Id);
 
-        //Inser a todo
+        // Inser a todo
         Task<bool> AddTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due, Guid sprintId);
 
-        //Update todo
+        // Update todo
         Task<bool> UpdateTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due);
 
-        //Delete todo
+        // Delete todo
         Task<bool> DeleteTodo(Guid Id);
 
     }
