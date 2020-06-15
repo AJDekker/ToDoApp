@@ -87,9 +87,8 @@ namespace ToDoApp.ViewModels
         }
 
         //Inser a todo
-        public static async Task<bool> AddTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due, Guid SprintId)
-        {
-            Guid PersonId = new Guid(Application.Current.Properties["id"].ToString());
+        public static async Task<bool> AddTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due, Guid SprintId, Guid PersonId)
+        { 
             try
             { 
                 await firebase

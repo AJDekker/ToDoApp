@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="ToDoApp.App">
+    <Position X="31.25" Y="9" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Models.MenuItemType">
+    <Position X="29" Y="9" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Models.HomeMenuItem">
+    <Position X="32" Y="4.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Models.Item">
+    <Position X="27" Y="9" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Models.Person">
+    <Position X="27.75" Y="6.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Models.Sprint">
+    <Position X="29.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Models.Todo">
+    <Position X="23.75" Y="5.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Models.WeatherData">
+    <Position X="21.75" Y="5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Models.Clouds">
+    <Position X="27.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Models.Main">
+    <Position X="25.75" Y="6.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Models.Weather">
+    <Position X="29.5" Y="4" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Models.Wind">
+    <Position X="25.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Repository.LoginRepository" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="5" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ToDoApp.Repository.TodoRepository" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="5" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ToDoApp.Repository.Sprint.SprintRepository" BaseTypeListCollapsed="true">
+    <Position X="15" Y="5" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TodoApp.Services.RestService">
+    <Position X="31.75" Y="11.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Services.AppSetup">
+    <Position X="4.5" Y="9.75" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Services.Constants">
+    <Position X="16" Y="11.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Services.LongToDateTimeConverter">
+    <Position X="16.25" Y="10" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Services.MockDataStore" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="9" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ToDoApp.Services.NavigationService" BaseTypeListCollapsed="true">
+    <Position X="18.75" Y="10" Width="3" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TodoApp.ViewModels.TodoViewModel">
+    <Position X="18.75" Y="0.5" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.SprintFirebaseHelper">
+    <Position X="7.25" Y="9.75" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.TodoFirebaseHelper">
+    <Position X="9.5" Y="9.75" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.UserFirebaseHelper">
+    <Position X="7.25" Y="12.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.BaseViewModel">
+    <Position X="7.75" Y="0.5" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.LoginViewModel">
+    <Position X="22.5" Y="0.5" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.SignUpViewModel">
+    <Position X="30" Y="0.5" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.AboutViewModel">
+    <Position X="9.5" Y="4.25" Width="2.5" />
+    <InheritanceLine Type="ToDoApp.ViewModels.BaseViewModel" FixedFromPoint="true">
+      <Path>
+        <Point X="10.75" Y="3.276" />
+        <Point X="10.75" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.TodoDetailViewModel">
+    <Position X="5" Y="0.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.TodoListSprintViewModel">
+    <Position X="12.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.TodoListViewModel">
+    <Position X="4.5" Y="2.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.Sprint.SprintDetailViewModel">
+    <Position X="7.25" Y="4.25" Width="2" />
+    <InheritanceLine Type="ToDoApp.ViewModels.BaseViewModel" FixedFromPoint="true">
+      <Path>
+        <Point X="8.25" Y="3.276" />
+        <Point X="8.25" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.Sprint.SprintListViewModel">
+    <Position X="12.25" Y="2.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.Sprint.SprintViewModel">
+    <Position X="26.25" Y="0.5" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.ViewModels.Weather.WeatherViewModel">
+    <Position X="15" Y="0.5" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Views.LoginPage">
+    <Position X="8.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Views.SignUpPage">
+    <Position X="12.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Views.AboutPage">
+    <Position X="4.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Views.MainPage">
+    <Position X="4.5" Y="5" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Views.MenuPage">
+    <Position X="10.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Views.WelcomePage">
+    <Position X="4.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Views.AddTodo">
+    <Position X="14.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Views.WeatherPage">
+    <Position X="6.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Views.Sprint.AddSprint">
+    <Position X="6.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Views.Sprint.SprintDetailPage">
+    <Position X="12.25" Y="5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Views.Sprint.SprintListPage">
+    <Position X="8.5" Y="6.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Views.Todo.TodoDetailPage">
+    <Position X="12.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Views.Todo.TodoListPage">
+    <Position X="10.5" Y="6.75" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Droid.MainActivity">
+    <Position X="12" Y="9.75" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Droid.Resource">
+    <Position X="24.75" Y="9" Width="2" />
+    <NestedTypes>
+      <Class Name="ToDoApp.Droid.Resource.Integer" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Interpolator" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Dimension" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Mipmap" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Animation" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Id" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Style" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Color" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Layout" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Boolean" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.String" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Attribute" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Drawable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Animator" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Styleable" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="ToDoApp.Droid.Resource.Xml" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ToDoApp.Droid.Setup">
+    <Position X="4.5" Y="11.75" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="ToDoApp.Repository.ILoginRepository">
+    <Position X="14.25" Y="7.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ToDoApp.Repository.ITodoRepository">
+    <Position X="18.5" Y="7.5" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="TodoApp.Repository.Sprint.ISprintRepository">
+    <Position X="16.25" Y="7.5" Width="2" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ToDoApp.Services.IDataStore&lt;T&gt;">
+    <Position X="31.5" Y="6.75" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="ToDoApp.Services.INavigationService">
+    <Position X="9.5" Y="12.75" Width="3" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

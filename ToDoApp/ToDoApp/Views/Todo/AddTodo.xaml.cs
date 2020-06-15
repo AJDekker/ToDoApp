@@ -20,7 +20,7 @@ namespace ToDoApp.Views
         {
             InitializeComponent();
             todoViewModel = Services.AppContainer.Container.Resolve<TodoViewModel>(); 
-            todoViewModel.sprintId = new Guid(Application.Current.Properties["SprintId"].ToString());
+            todoViewModel.SprintId = new Guid(Application.Current.Properties["SprintId"].ToString());
             BindingContext = todoViewModel;
         }
     }

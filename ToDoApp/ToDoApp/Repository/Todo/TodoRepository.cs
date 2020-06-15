@@ -8,7 +8,7 @@ using ToDoApp.ViewModels;
 namespace ToDoApp.Repository
 {
     public class TodoRepository : ITodoRepository
-    {
+    { 
 
         public async Task<List<Todo>> GetAllTodo()
         {
@@ -29,7 +29,7 @@ namespace ToDoApp.Repository
         //Inser a user
         public async Task<bool> AddTodo(Guid Id, string Name, string Description, int StoryPoints, DateTime Due, Guid sprintId)
         {
-            return await TodoFirebaseHelper.AddTodo(Id, Name, Description, StoryPoints, Due, sprintId);
+            return await TodoFirebaseHelper.AddTodo(Id, Name, Description, StoryPoints, Due, sprintId, Guid.NewGuid());
         }
 
         //Update 

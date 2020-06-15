@@ -45,8 +45,6 @@ namespace ToDoApp.Views.Todo
         async void AddItem_Clicked(object sender, EventArgs e)
         { 
             await Navigation.PushModalAsync(new NavigationPage(new AddTodo()));
-            Console.WriteLine("tesaaaat");
-            Console.WriteLine(Id);
         }
 
         protected override void OnAppearing()

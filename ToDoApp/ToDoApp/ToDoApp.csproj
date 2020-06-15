@@ -29,20 +29,11 @@
     <Compile Update="Views\Todo\AddTodo.xaml.cs">
       <DependentUpon>AddTodo.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Item\ItemDetailPage.xaml.cs">
-      <DependentUpon>ItemDetailPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\Todo\TodoDetailPage.xaml.cs">
       <DependentUpon>TodoDetailPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Item\ItemsPage.xaml.cs">
-      <DependentUpon>ItemsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\Todo\TodoListPage.xaml.cs">
       <DependentUpon>TodoListPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Item\NewItemPage - Copy.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
   </ItemGroup>
 

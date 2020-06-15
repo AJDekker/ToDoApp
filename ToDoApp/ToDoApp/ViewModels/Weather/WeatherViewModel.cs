@@ -23,10 +23,10 @@ namespace ToDoApp.ViewModels.Weather
         HttpClient _client;
         RestService _restService;
 
-        public WeatherViewModel()
+        public WeatherViewModel(HttpClient client, RestService restService)
         { 
-            _client = new HttpClient();
-            _restService = new RestService();
+            _client = client;
+            _restService = restService;
             city = "Amsterdam";
             GetResultWeather();
         }

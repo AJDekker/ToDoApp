@@ -19,12 +19,9 @@ namespace ToDoApp
             Application.Current.Properties["id"] = "";
 
             NavigationService.Configure("MainPage", typeof(Views.MainPage));
-            NavigationService.Configure("AboutPage", typeof(Views.AboutPage)); 
-            NavigationService.Configure("ItemDetailPage", typeof(Views.ItemDetailPage));
-            NavigationService.Configure("ItemsPage", typeof(Views.ItemsPage));
+            NavigationService.Configure("AboutPage", typeof(Views.AboutPage));  
             NavigationService.Configure("LoginPage", typeof(Views.LoginPage));
-            NavigationService.Configure("MenuPage", typeof(Views.MenuPage));
-            NavigationService.Configure("NewItemPage", typeof(Views.NewItemPage));
+            NavigationService.Configure("MenuPage", typeof(Views.MenuPage)); 
             NavigationService.Configure("SignUpPage", typeof(Views.SignUpPage)); 
             NavigationService.Configure("WelcomePage", typeof(Views.WelcomePage));  
             var mainPage = ((NavigationService)NavigationService).SetRootPage("MainPage");
